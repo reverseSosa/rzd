@@ -66,7 +66,7 @@ const Card = ({
 	return (
 		<Link
 			href={href}
-			className="bg-red text-white text-[30px] font-bold w-full h-[220px] flex flex-col items-center justify-center gap-[34px] rounded-[40px]"
+			className="bg-red text-white text-[30px] font-bold w-full h-[220px] flex flex-col items-center justify-center gap-[34px] rounded-[40px] z-10"
 		>
 			{icon}
 			<span>{label}</span>

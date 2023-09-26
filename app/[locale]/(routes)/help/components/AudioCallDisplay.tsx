@@ -36,7 +36,7 @@ const AudioCallDisplay = ({
 	const t = useScopedI18n("videoHelp");
 
 	return (
-		<div className="fixed w-[1080px] h-[1920px] top-0 left-0 z-[50] bg-red">
+		<div className="fixed w-[1080px] h-[1920px] top-0 left-1/2 translate-x-[-50%] z-[50] bg-red">
 			<div className="fixed top-0 left-0 w-full h-[280px] flex justify-center items-center bg-transparent">
 				<RzdLogo className="fill-red" />
 			</div>
