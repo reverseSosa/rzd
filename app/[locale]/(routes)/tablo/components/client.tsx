@@ -130,8 +130,9 @@ const TabloClient = () => {
 							return route;
 						}
 					})
-					.map((route) => (
+					.map((route, index) => (
 						<RouteItem
+							key={index}
 							name={route.name}
 							dateTime={route.dateTime}
 							ticketCode={route.ticketCode}
