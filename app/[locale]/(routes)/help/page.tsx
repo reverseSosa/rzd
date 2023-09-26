@@ -1,14 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import dynamic from "next/dynamic";
 
 import { getScopedI18n } from "@/locales/server";
 
-import HeadPhonesIcon from "@/components/icons/HeadPhonesIcon";
 import RzdLogoBig from "@/components/icons/RzdLogoBig";
-
-const VideoCallDisplay = dynamic(() => import("./components/VideoCallDisplay"));
-const AudioCallDisplay = dynamic(() => import("./components/AudioCallDisplay"));
+import VideoButton from "./components/VideoButton";
+import AudioButton from "./components/AudioButton";
 
 import rabotnikFirst from "@/public/rabotnikFirst.png";
 
@@ -16,7 +13,7 @@ const HelpPage = async () => {
 	const t = await getScopedI18n("videoHelp");
 	return (
 		<main className="flex min-h-screen flex-col items-center pt-[300px] text-center bg-red px-[100px] pb-[100px]">
-			<p className="text-white text-[20px] leading-[30px] text-center max-w-[800px]">
+			<p className="text-white text-[20px] leading-[30px] text-center max-w-[800px] block z-[90]">
 				{t("firstP")}
 			</p>
 			<div className="h-[893px] w-full relative flex justify-center items-end">
@@ -27,15 +24,9 @@ const HelpPage = async () => {
 					className="absolute z-20 bottom-[-120px] left-1/2 translate-x-[-50%]"
 				/>
 			</div>
-			<div className="flex flex-col gap-[23px] w-full z-30">
-				<button className="bg-white flex justify-center items-center gap-[30px] rounded-[80px] text-[30px] leading-[30px] font-bold text-black/90 w-full h-[140px]">
-					<HeadPhonesIcon className="w-[46px] h-[46px] stroke-red" />
-					{t("audioCall")}
-				</button>
-				<button className="bg-white flex justify-center items-center gap-[30px] rounded-[80px] text-[30px] leading-[30px] font-bold text-black/90 w-full h-[140px]">
-					<HeadPhonesIcon className="w-[46px] h-[46px] stroke-red" />
-					{t("videoCall")}
-				</button>
+			<div className="flex flex-col gap-[23px] w-full z-[90]">
+				<AudioButton />
+				<VideoButton />
 			</div>
 			<Link
 				href="/"

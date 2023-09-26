@@ -27,7 +27,7 @@ const Header = () => {
 			/>
 			<header
 				className={cn(
-					"pt-24 p-20 flex justify-between items-center fixed top-0 w-full h-[280px] z-[60]",
+					"pt-24 p-20 flex justify-between items-center fixed top-0 w-full h-[280px] z-[80]",
 					pathname === `/${locale}` && "bg-transparent",
 				)}
 			>

@@ -38,7 +38,7 @@ const VideoCallDisplay = ({
 	const t = useScopedI18n("videoHelp");
 
 	return (
-		<div className="fixed w-[1080px] h-[1920px] top-0 left-0 z-[80] bg-white">
+		<div className="fixed w-[1080px] h-[1920px] top-0 left-0 z-[200] bg-white">
 			<div className="fixed top-0 left-0 w-full h-[280px] flex justify-center items-center bg-transparent">
 				<RzdLogo className="fill-red" />
 			</div>

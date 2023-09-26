@@ -9,6 +9,7 @@ import mapImage from "@/public/mapImage.png";
 
 const MapPage = async () => {
 	const t = await getScopedI18n("stationMap");
+
 	return (
 		<main className="flex min-h-screen flex-col items-center justify-end">
 			<Image
