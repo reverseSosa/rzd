@@ -3,6 +3,10 @@
 import { YMaps, Map, Placemark } from "@pbe/react-yandex-maps";
 
 const MapClient = () => {
+	const isBrowser = () => typeof window !== "undefined";
+
+	if (!isBrowser) return null;
+
 	return (
 		<YMaps>
 			<Map
