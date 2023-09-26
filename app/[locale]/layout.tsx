@@ -1,5 +1,6 @@
 import Header from "@/components/ui/Header";
 import LocaleProvider from "@/providers/LocaleProvider";
+import MapProvider from "@/providers/MapProvider";
 import "@/styles/globals.css";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
@@ -39,10 +40,12 @@ export default function RootLayout({
 	return (
 		<html lang="ru" className={russianRail.variable}>
 			<body>
-				<LocaleProvider>
-					<Header />
-					{children}
-				</LocaleProvider>
+				<MapProvider>
+					<LocaleProvider>
+						<Header />
+						{children}
+					</LocaleProvider>
+				</MapProvider>
 			</body>
 		</html>
 	);

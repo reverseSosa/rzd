@@ -14,20 +14,12 @@ const MapClient = () => {
 				zoom: 20,
 				type: "yandex#satellite",
 			}}
-			style={{ height: "100%" }}
+			className="w-full h-[900px] z-40"
 		>
 			<Placemark
-				geometry={[55.777422, 37.654213]}
+				geometry={[55.775933, 37.655502]}
 				options={{
-					iconLayout: "default#image",
-					iconImageHref: "/train.svg",
-				}}
-			/>
-			<Placemark
-				geometry={[55.776128, 37.65545]}
-				options={{
-					iconLayout: "default#image",
-					iconImageHref: "/kassa.svg",
+					iconColor: "red",
 				}}
 			/>
 		</Map>

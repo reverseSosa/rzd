@@ -8,12 +8,13 @@ import { getScopedI18n } from "@/locales/server";
 import Slider from "./components/Slider";
 
 import aboutImage from "@/public/aboutImage.png";
+import MapClient from "./components/client";
 
 const AboutPage = async () => {
 	const t = await getScopedI18n("aboutStation");
 	return (
 		<main className="flex min-h-screen flex-col items-center">
-			<Image src={aboutImage} alt="aboutImage" className="block z-40" />
+			<MapClient />
 			<div className="bg-red w-full px-[100px] py-20 flex items-center gap-[60px] text-white">
 				<div className="h-full py-14 px-[50px] border border-white">
 					<TrainIcon className="h-[60px] w-[60px] stroke-white" />
