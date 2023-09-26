@@ -52,6 +52,7 @@ export default {
 		aprons: "Aprons",
 		ticketsBuy: "Purchase of tickets at the box office windows",
 		stationName: "Leningradsky station",
+		main: "Home",
 	},
 	serviceCatalog: {
 		services: "Services",

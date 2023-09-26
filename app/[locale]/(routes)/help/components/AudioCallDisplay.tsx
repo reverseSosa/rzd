@@ -1,13 +1,11 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useState } from "react";
 
 import { useScopedI18n } from "@/locales/client";
 import RzdLogo from "@/components/icons/RzdLogo";
 import HeadPhonesIcon from "@/components/icons/HeadPhonesIcon";
-
-import rabotnikSecond from "@/public/rabotnikSecond.png";
+import AudioIcon from "@/components/icons/AudioIcon";
 
 const AudioCallDisplay = ({
 	name,
@@ -42,6 +40,7 @@ const AudioCallDisplay = ({
 			<div className="fixed top-0 left-0 w-full h-[280px] flex justify-center items-center bg-transparent">
 				<RzdLogo className="fill-red" />
 			</div>
+			<AudioIcon className="absolute top-1/2 left-1/2 translate-y-[-50%] translate-x-[-50%] z-30" />
 			<div className="absolute w-full flex flex-col justify-center bottom-20 text-white px-[100px]">
 				<h2 className="text-[40px]">{t("operator")}</h2>
 				<h1 className="leading-[86px] text-[94px] font-bold">{name}</h1>

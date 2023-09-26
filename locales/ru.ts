@@ -53,6 +53,7 @@ export default {
 		aprons: "Перроны",
 		ticketsBuy: "Приобретение билетов в кассовых окнах",
 		stationName: "Ленинградский вокзал",
+		main: "На главную",
 	},
 	serviceCatalog: {
 		services: "Услуги",

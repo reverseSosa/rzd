@@ -16,7 +16,6 @@ const HelpPage = async () => {
 	const t = await getScopedI18n("videoHelp");
 	return (
 		<main className="flex min-h-screen flex-col items-center pt-[300px] text-center bg-red px-[100px] pb-[100px]">
-			<AudioCallDisplay name="Наталья" />
 			<p className="text-white text-[20px] leading-[30px] text-center max-w-[800px]">
 				{t("firstP")}
 			</p>
