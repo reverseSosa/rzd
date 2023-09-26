@@ -1,23 +1,19 @@
-import Image from "next/image";
 import Link from "next/link";
 
 import { getScopedI18n } from "@/locales/server";
 import TrainIcon from "@/components/icons/TrainIcon";
 import KassaIcon from "@/components/icons/KassaIcon";
 
-import mapImage from "@/public/mapImage.png";
+import MapClient from "./components/client";
 
 const MapPage = async () => {
 	const t = await getScopedI18n("stationMap");
 
 	return (
 		<main className="flex min-h-screen flex-col items-center justify-end">
-			<Image
-				src={mapImage}
-				alt="map"
-				style={{ objectFit: "cover" }}
-				className="fixed z-30"
-			/>
+			<div className="absolute z-40 w-full h-full">
+				<MapClient />
+			</div>
 			<div className="flex flex-col gap-5 px-[100px] pb-20 z-40 w-full">
 				<div className="bg-white h-[380px] px-[44px] pt-10 leading-[30px] text-[20px] flex flex-col gap-9">
 					<div className="flex items-center gap-6">
