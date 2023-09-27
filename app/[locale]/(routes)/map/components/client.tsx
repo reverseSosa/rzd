@@ -12,7 +12,6 @@ const MapClient = () => {
 			defaultState={{
 				center: [55.775933, 37.655502],
 				zoom: 20,
-				type: "yandex#satellite",
 			}}
 			style={{ height: "100%" }}
 		>
