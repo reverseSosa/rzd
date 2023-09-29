@@ -1,9 +1,15 @@
+import "@/styles/globals.css";
+import dynamic from "next/dynamic";
+import type { Metadata } from "next";
+import localFont from "next/font/local";
+
 import Header from "@/components/ui/Header";
 import LocaleProvider from "@/providers/LocaleProvider";
 import MapProvider from "@/providers/MapProvider";
-import "@/styles/globals.css";
-import type { Metadata } from "next";
-import localFont from "next/font/local";
+
+const Screensaver = dynamic(() => import("@/components/ui/Screensaver"), {
+	ssr: false,
+});
 
 const russianRail = localFont({
 	src: [
@@ -43,6 +49,7 @@ export default function RootLayout({
 				<MapProvider>
 					<LocaleProvider>
 						<Header />
+						<Screensaver />
 						{children}
 					</LocaleProvider>
 				</MapProvider>
