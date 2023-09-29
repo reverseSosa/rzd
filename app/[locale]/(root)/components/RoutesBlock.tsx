@@ -1,27 +1,18 @@
-import RouteItem, { RouteItemProps } from "@/components/ui/RouteItem";
+import RouteItem from "@/components/ui/RouteItem";
+import { routes } from "@/lib/routes";
 
 const RoutesBlock = async () => {
-	const routes: RouteItemProps[] = [
-		{
-			name: "Москва - Псков",
-			dateTime: 1695674261000,
-			ticketCode: "228B",
-		},
-		{
-			name: "Москва - Псков",
-			dateTime: 1695674261000,
-			ticketCode: "228B",
-		},
-		{
-			name: "Москва - Псков",
-			dateTime: 1695674261000,
-			ticketCode: "228B",
-		},
+	const filteredRoutes = routes.filter((route) => route.dateTime > Date.now());
+
+	const routesToDisplay = [
+		filteredRoutes[0],
+		filteredRoutes[1],
+		filteredRoutes[2],
 	];
 
 	return (
 		<ul className="pl-[100px] pr-20 pt-[120px] flex flex-col gap-5 w-full">
-			{routes.map((route, index) => (
+			{routesToDisplay.map((route, index) => (
 				<RouteItem
 					key={index}
 					name={route.name}

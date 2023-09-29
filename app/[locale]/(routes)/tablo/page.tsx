@@ -2,7 +2,7 @@ import MainButton from "@/components/ui/MainButton";
 import ToTopButton from "@/components/ui/ToTopButton";
 import TabloClient from "./components/client";
 
-const TabloPage = () => {
+const TabloPage = async () => {
 	return (
 		<main className="flex min-h-screen flex-col items-center pt-[280px] text-center">
 			<TabloClient />

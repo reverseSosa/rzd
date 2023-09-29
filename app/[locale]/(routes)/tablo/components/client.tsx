@@ -1,11 +1,13 @@
 "use client";
 
+import { useState } from "react";
 import { format } from "date-fns";
 import { enUS, ru } from "date-fns/locale";
 
 import { useCurrentLocale, useScopedI18n } from "@/locales/client";
-import RouteItem, { RouteItemProps } from "@/components/ui/RouteItem";
-import { useState } from "react";
+import RouteItem from "@/components/ui/RouteItem";
+
+import { routes } from "@/lib/routes";
 
 const TabloClient = () => {
 	const [showGone, setShowGone] = useState(false);
@@ -13,96 +15,6 @@ const TabloClient = () => {
 	const t = useScopedI18n("onlineTablo");
 
 	const date = new Date();
-
-	const trains = 24;
-
-	const routes: RouteItemProps[] = [
-		{
-			name: "Москва - Псков",
-			dateTime: 1695616369000,
-			ticketCode: "228B",
-		},
-		{
-			name: "Москва - Псков",
-			dateTime: 1695616369000,
-			ticketCode: "228B",
-		},
-		{
-			name: "Москва - Псков",
-			dateTime: 1695972769000,
-			ticketCode: "228B",
-		},
-		{
-			name: "Москва - Псков",
-			dateTime: 1695972769000,
-			ticketCode: "228B",
-		},
-		{
-			name: "Москва - Псков",
-			dateTime: 1695972769000,
-			ticketCode: "228B",
-		},
-		{
-			name: "Москва - Псков",
-			dateTime: 1695972769000,
-			ticketCode: "228B",
-		},
-		{
-			name: "Москва - Псков",
-			dateTime: 1695972769000,
-			ticketCode: "228B",
-		},
-		{
-			name: "Москва - Псков",
-			dateTime: 1695972769000,
-			ticketCode: "228B",
-		},
-		{
-			name: "Москва - Псков",
-			dateTime: 1695972769000,
-			ticketCode: "228B",
-		},
-		{
-			name: "Москва - Псков",
-			dateTime: 1695972769000,
-			ticketCode: "228B",
-		},
-		{
-			name: "Москва - Псков",
-			dateTime: 1695972769000,
-			ticketCode: "228B",
-		},
-		{
-			name: "Москва - Псков",
-			dateTime: 1695972769000,
-			ticketCode: "228B",
-		},
-		{
-			name: "Москва - Псков",
-			dateTime: 1695972769000,
-			ticketCode: "228B",
-		},
-		{
-			name: "Москва - Псков",
-			dateTime: 1695972769000,
-			ticketCode: "228B",
-		},
-		{
-			name: "Москва - Псков",
-			dateTime: 1695972769000,
-			ticketCode: "228B",
-		},
-		{
-			name: "Москва - Псков",
-			dateTime: 1695972769000,
-			ticketCode: "228B",
-		},
-		{
-			name: "Москва - Псков",
-			dateTime: 1695972769000,
-			ticketCode: "228B",
-		},
-	];
 
 	return (
 		<div className="pt-[220px] pl-[100px] pr-20 w-full">
@@ -118,7 +30,10 @@ const TabloClient = () => {
 					className="bg-[#F6F6F6] w-full flex justify-center items-center h-[60px]"
 				>
 					{showGone ? t("hideGone") : t("showGone")} (
-					{t("trains", { count: trains })})
+					{t("trains", {
+						count: routes.filter((route) => route.dateTime < Date.now()).length,
+					})}
+					)
 				</button>
 			</div>
 			<ul className="pt-[100px] flex flex-col gap-5 w-full">

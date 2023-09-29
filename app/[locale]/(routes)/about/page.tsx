@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 import TrainIcon from "@/components/icons/TrainIcon";
 import MainButton from "@/components/ui/MainButton";
 import ToTopButton from "@/components/ui/ToTopButton";
@@ -7,7 +5,6 @@ import { getScopedI18n } from "@/locales/server";
 
 import Slider from "./components/Slider";
 
-import aboutImage from "@/public/aboutImage.png";
 import MapClient from "./components/client";
 
 const AboutPage = async () => {
