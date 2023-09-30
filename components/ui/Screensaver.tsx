@@ -40,7 +40,7 @@ const Screensaver = () => {
 	return (
 		<>
 			{visible && (
-				<div className="fixed top-0 left-0 h-full w-full z-[120]">
+				<div className="fixed top-0 left-0 h-full w-full z-[120] bg-black/80 backdrop-blur-md">
 					<video
 						className="absolute top-0 left-0 w-full h-auto"
 						id="video_banner"
@@ -54,7 +54,7 @@ const Screensaver = () => {
 					<Image
 						src={fox}
 						alt="fox"
-						className="absolute left-0 bottom-[0px] scale-[0.8]"
+						className="absolute left-0 bottom-[-110px] scale-[0.8] z-[130]"
 					/>
 				</div>
 			)}

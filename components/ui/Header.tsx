@@ -2,8 +2,8 @@
 
 import axios from "axios";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 
 import { cn } from "@/lib/utils";
