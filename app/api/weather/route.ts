@@ -9,6 +9,7 @@ export async function GET(req: NextRequest) {
 					"X-Yandex-API-Key": process.env.WEATHER_API_KEY!,
 				},
 				method: "GET",
+				cache: "no-store",
 			},
 		);
 
