@@ -28,8 +28,11 @@ const Header = () => {
 			});
 			const data = res.data;
 
-			console.log(data);
-			setTemp(data.fact.temp);
+			if (data && data.fact && data.fact.temp) {
+				setTemp(data.fact.temp);
+			} else {
+				setTemp(0);
+			}
 		};
 		fetchWeather();
 	}, []);

@@ -26,7 +26,13 @@ const AudioButton = ({ stationId }: { stationId: StationId }) => {
 
 	return (
 		<Dialog open={open} onOpenChange={onChange}>
-			{call && <AudioCallDisplay name="Наталья" onEnd={() => setCall(false)} />}
+			{call && (
+				<AudioCallDisplay
+					stationId={stationId}
+					name="Наталья"
+					onEnd={() => setCall(false)}
+				/>
+			)}
 			<DialogTrigger asChild>
 				<button
 					onClick={() => setOpen(true)}

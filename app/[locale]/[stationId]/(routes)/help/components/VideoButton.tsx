@@ -26,7 +26,13 @@ const VideoButton = ({ stationId }: { stationId: StationId }) => {
 
 	return (
 		<Dialog open={open} onOpenChange={onChange}>
-			{call && <VideoCallDisplay name="Наталья" onEnd={() => setCall(false)} />}
+			{call && (
+				<VideoCallDisplay
+					stationId={stationId}
+					name="Наталья"
+					onEnd={() => setCall(false)}
+				/>
+			)}
 			<DialogTrigger asChild>
 				<button
 					onClick={() => setOpen(true)}
