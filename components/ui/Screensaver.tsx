@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
+import { useRouter, useParams } from "next/navigation";
 
 import fox from "@/public/fox.png";
 
@@ -15,13 +15,15 @@ const Screensaver = () => {
 
 	const router = useRouter();
 
+	const params = useParams();
+
 	useEffect(() => {
 		const handleInteraction = () => {
 			setVisible(false);
 		};
 
 		const handleInactivity = () => {
-			router.push("/");
+			router.push(`/${params.stationId}`);
 			setVisible(true);
 		};
 

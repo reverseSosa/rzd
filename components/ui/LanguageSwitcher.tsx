@@ -1,16 +1,17 @@
 "use client";
 
+import { useState } from "react";
+import { usePathname, useParams } from "next/navigation";
 import { useSpring, animated } from "@react-spring/web";
 
 import { cn } from "@/lib/utils";
 import { useChangeLocale, useCurrentLocale } from "@/locales/client";
-import { useState } from "react";
-import { usePathname } from "next/navigation";
 
 const LanguageSwitcher = () => {
 	const pathname = usePathname();
 	const locale = useCurrentLocale();
 	const changeLocale = useChangeLocale();
+	const params = useParams();
 
 	const [localeState, setLocaleState] = useState<"ru" | "en">(locale);
 
@@ -23,7 +24,9 @@ const LanguageSwitcher = () => {
 		<div
 			className={cn(
 				"text-[20px] font-normal flex w-40 h-[60px] cursor-pointer relative z-50",
-				pathname === `/${locale}` ? "bg-black/10" : "bg-white/[0.32]",
+				pathname === `/${locale}/${params.stationId}`
+					? "bg-black/10"
+					: "bg-white/[0.32]",
 			)}
 		>
 			<div
@@ -33,9 +36,11 @@ const LanguageSwitcher = () => {
 				}}
 				className={cn(
 					"text-black/50 text-center h-full w-1/2 flex items-center grow justify-center transition-colors duration-150",
-					pathname !== `/${locale}` && "text-white/50",
+					pathname !== `/${locale}/${params.stationId}` && "text-white/50",
 					locale === "ru" && "text-white",
-					locale === "ru" && pathname !== `/${locale}` && "text-black/60",
+					locale === "ru" &&
+						pathname !== `/${locale}/${params.stationId}` &&
+						"text-black/60",
 				)}
 			>
 				<p className="z-10">Рус</p>
@@ -47,9 +52,11 @@ const LanguageSwitcher = () => {
 				}}
 				className={cn(
 					"text-black/50 text-center h-full w-1/2 flex items-center grow justify-center transition-colors duration-150",
-					pathname !== `/${locale}` && "text-white/50",
+					pathname !== `/${locale}/${params.stationId}` && "text-white/50",
 					locale === "en" && "text-white",
-					locale === "en" && pathname !== `/${locale}` && "text-black/60",
+					locale === "en" &&
+						pathname !== `/${locale}/${params.stationId}` &&
+						"text-black/60",
 				)}
 			>
 				<p className="z-10">Eng</p>
@@ -58,7 +65,7 @@ const LanguageSwitcher = () => {
 				style={switchAnimation}
 				className={cn(
 					"w-1/2 h-full absolute top-0 left-0 z-0",
-					pathname === `/${locale}` ? "bg-red" : "bg-white",
+					pathname === `/${locale}/${params.stationId}` ? "bg-red" : "bg-white",
 				)}
 			/>
 		</div>

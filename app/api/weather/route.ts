@@ -1,9 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
 
-export async function GET(req: NextRequest) {
+export async function POST(req: NextRequest) {
 	try {
+		const reqBody = await req.json();
+
+		const { lat, lon } = reqBody;
+
 		const res = await fetch(
-			"https://api.weather.yandex.ru/v2/informers?lat=55.775940&lon=37.655504",
+			`https://api.weather.yandex.ru/v2/informers?lat=${lat}&lon=${lon}`,
 			{
 				headers: {
 					"X-Yandex-API-Key": process.env.WEATHER_API_KEY!,
