@@ -34,15 +34,14 @@ const TabloClient = ({ stationId }: { stationId: StationId }) => {
 				>
 					{showGone ? t("hideGone") : t("showGone")} (
 					{t("trains", {
-						count: routes[stationId].filter(
-							(route) => route.dateTime < Date.now(),
-						).length,
+						count: routes["1"].filter((route) => route.dateTime < Date.now())
+							.length,
 					})}
 					)
 				</button>
 			</div>
 			<ul className="pt-[100px] flex flex-col gap-5 w-full">
-				{routes[stationId]
+				{routes["1"]
 					.filter((route) => {
 						if (showGone) {
 							return route;
