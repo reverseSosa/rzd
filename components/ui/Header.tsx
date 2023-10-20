@@ -60,7 +60,7 @@ const Header = () => {
 							: "text-white",
 					)}
 				>
-					{/* <Clock className="text-[60px] font-bold" /> */}
+					<Clock className="text-[60px] font-bold" />
 					<div className="text-[30px] font-bold flex items-center">
 						<p className="h-[37px]">{`${temp}°`}</p>
 						<WeatherIcon
