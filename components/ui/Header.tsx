@@ -12,6 +12,7 @@ import { useCurrentLocale } from "@/locales/client";
 import RzdLogo from "@/components/icons/RzdLogo";
 import WeatherIcon from "@/components/icons/WeatherIcon";
 import LanguageSwitcher from "@/components/ui/LanguageSwitcher";
+
 const Clock = dynamic(() => import("@/components/ui/Clock"), { ssr: false });
 
 const Header = () => {
@@ -59,7 +60,7 @@ const Header = () => {
 							: "text-white",
 					)}
 				>
-					<Clock className="text-[60px] font-bold" />
+					{/* <Clock className="text-[60px] font-bold" /> */}
 					<div className="text-[30px] font-bold flex items-center">
 						<p className="h-[37px]">{`${temp}°`}</p>
 						<WeatherIcon
