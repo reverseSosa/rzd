@@ -1,3 +1,5 @@
+"use client";
+
 import { routes } from "@/lib/routes";
 
 import RouteItem from "@/components/ui/RouteItem";
