@@ -5,7 +5,7 @@ import RouteItem from "@/components/ui/RouteItem";
 import { StationId } from "@/types";
 
 const RoutesBlock = async ({ stationId }: { stationId: StationId }) => {
-	const filteredRoutes = routes["1"].filter(
+	const filteredRoutes = routes[stationId].filter(
 		(route) => route.dateTime > Date.now(),
 	);
 
