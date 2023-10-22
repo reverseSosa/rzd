@@ -9,7 +9,7 @@ const RoutesBlock = async ({ stationId }: { stationId: StationId }) => {
 		(route) => route.dateTime > Date.now(),
 	);
 
-	const routesToDisplay = [
+	let routesToDisplay = [
 		filteredRoutes[0],
 		filteredRoutes[1],
 		filteredRoutes[2],
@@ -17,12 +17,12 @@ const RoutesBlock = async ({ stationId }: { stationId: StationId }) => {
 
 	return (
 		<ul className="pl-[100px] pr-20 pt-[120px] flex flex-col gap-5 w-full">
-			{routesToDisplay.map((route, index) => (
+			{routesToDisplay?.map((route, index) => (
 				<RouteItem
 					key={index}
-					name={route.name}
-					dateTime={route.dateTime}
-					ticketCode={route.ticketCode}
+					name={route ? route?.name : "Рейсы отсутствуют"}
+					dateTime={route ? route?.dateTime : Date.now()}
+					ticketCode={route ? route?.ticketCode : "AAA"}
 				/>
 			))}
 		</ul>
