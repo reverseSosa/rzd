@@ -8,6 +8,8 @@ export default async function Home({
 	params,
 }: { params: { stationId: StationId } }) {
 	const t = await getScopedI18n(`${params.stationId}.home`);
+	const w = 1;
+
 	return (
 		<main className="flex min-h-screen flex-col items-center pt-[360px] text-center">
 			<div className="absolute top-0 left-0 z-0 max-w-full overflow-hidden h-[800px]">
