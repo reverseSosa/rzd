@@ -28,7 +28,7 @@ const MapPage = async ({ params }: { params: { stationId: StationId } }) => {
 					</div>
 				</div>
 				<Link
-					href="/"
+					href={`/${params.stationId}`}
 					className="h-[100px] bg-red flex items-center justify-center text-white text-[30px] font-bold"
 				>
 					{t("main")}

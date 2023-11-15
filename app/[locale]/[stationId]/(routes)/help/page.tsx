@@ -33,7 +33,7 @@ const HelpPage = async ({ params }: { params: { stationId: StationId } }) => {
 				<VideoButton stationId={params.stationId} />
 			</div>
 			<Link
-				href="/"
+				href={`/${params.stationId}`}
 				className="w-full border border-white text-white/90 text-[30px] leading-[30px] font-bold flex items-center justify-center h-[100px] mt-20"
 			>
 				{t("main")}
