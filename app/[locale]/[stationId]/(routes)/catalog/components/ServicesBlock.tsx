@@ -16,7 +16,7 @@ const ServicesBlock = async ({ stationId }: { stationId: StationId }) => {
 	const routes = [
 		{
 			label: t("ticketsBuyCash"),
-			href: "/catalog/kassa",
+			href: `/${stationId}/catalog/kassa`,
 			icon: <KassaIcon className="w-10 h-10 stroke-white" />,
 		},
 		{

@@ -1,16 +1,21 @@
-import { HtmlHTMLAttributes } from "react";
+"use client";
+
 import Link from "next/link";
+import { useParams } from "next/navigation";
+import { HtmlHTMLAttributes } from "react";
 
 import { cn } from "@/lib/utils";
-import { getI18n } from "@/locales/server";
+import { useI18n } from "@/locales/client";
 
 interface MainButtonprops extends HtmlHTMLAttributes<HTMLAnchorElement> {}
 const MainButton: React.FC<MainButtonprops> = async (props) => {
-	const t = await getI18n();
+	const t = useI18n();
+
+	const params = useParams();
 
 	return (
 		<Link
-			href="/"
+			href={`/${params.stationId}`}
 			className={cn(
 				"w-full bg-red opacity-80 text-center h-[100px] flex items-center justify-center",
 				props.className,

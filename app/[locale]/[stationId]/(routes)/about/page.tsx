@@ -5,12 +5,21 @@ import TrainIcon from "@/components/icons/TrainIcon";
 import ToTopButton from "@/components/ui/ToTopButton";
 
 import Slider from "./components/Slider";
-
 import MapClient from "./components/client";
+
 import { StationId } from "@/types";
 
-const AboutPage = async ({ params }: { params: { stationId: StationId } }) => {
+const AboutPage = async ({
+	params,
+}: { params: { locale: "ru" | "en"; stationId: StationId } }) => {
 	const t = await getScopedI18n(`${params.stationId}.aboutStation`);
+
+	const data = await fetch(
+		`https://rzd.bpium.ru/api/webrequest/station?id=${params.stationId}`,
+		{ method: "GET" },
+	).then((res) => res.json());
+
+	const images = data.values["12"].map((image: any) => image.url);
 
 	return (
 		<main className="flex min-h-screen flex-col items-center">
@@ -21,11 +30,15 @@ const AboutPage = async ({ params }: { params: { stationId: StationId } }) => {
 				</div>
 				<div className="text-left h-full">
 					<h2 className="text-[20px]">{t("railwayStation")}</h2>
-					<h1 className="text-[40px] font-bold mt-2">{t("stationName")}</h1>
+					<h1 className="text-[40px] font-bold mt-2">
+						{params.locale === "ru" ? data.values["2"] : data.values["3"]}
+					</h1>
 					<span className="text-[20px] font-bold leading-[30px] mt-4">
 						+7 800 775-00-00
 					</span>
-					<p className="text-[15px] mt-2 font-normal">{t("address")}</p>
+					<p className="text-[15px] mt-2 font-normal">
+						{data.values["8"].value}
+					</p>
 				</div>
 			</div>
 			<div className="px-[100px] pt-[60px] pb-[91px]">
@@ -39,7 +52,7 @@ const AboutPage = async ({ params }: { params: { stationId: StationId } }) => {
 					<p>{t("seventhP")}</p>
 				</div>
 			</div>
-			<Slider />
+			<Slider images={images} />
 			<div className="px-[100px] pt-20 pb-[66px]">
 				<div className="text-[15px] leading-[25px] text-left flex flex-col gap-8 mb-[54px]">
 					<p className="font-bold">{t("mainP")}</p>

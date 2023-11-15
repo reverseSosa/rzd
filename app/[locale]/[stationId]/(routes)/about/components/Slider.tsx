@@ -7,7 +7,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
 
-const Slider = () => {
+interface SliderProps {
+	images: string[];
+}
+
+const Slider: React.FC<SliderProps> = ({ images }) => {
 	const params = useParams();
 
 	return (
@@ -18,30 +22,11 @@ const Slider = () => {
 				slidesPerView={2}
 				spaceBetween={-100}
 			>
-				<SwiperSlide>
-					<Image
-						src={`/${params.stationId}_1.jpg`}
-						alt="vokzalFirst"
-						width={480}
-						height={315}
-					/>
-				</SwiperSlide>
-				<SwiperSlide>
-					<Image
-						src={`/${params.stationId}_2.jpg`}
-						alt="vokzalFirst"
-						width={480}
-						height={315}
-					/>
-				</SwiperSlide>
-				<SwiperSlide>
-					<Image
-						src={`/${params.stationId}_3.jpg`}
-						alt="vokzalFirst"
-						width={480}
-						height={315}
-					/>
-				</SwiperSlide>
+				{images.map((image, index) => (
+					<SwiperSlide key={index}>
+						<Image src={image} alt={String(index)} width={480} height={315} />
+					</SwiperSlide>
+				))}
 			</Swiper>
 		</div>
 	);

@@ -1,14 +1,11 @@
-import Image from "next/image";
-
 import { getScopedI18n } from "@/locales/server";
 
 import MainButton from "@/components/ui/MainButton";
 import ToTopButton from "@/components/ui/ToTopButton";
 import ServicesBlock from "./components/ServicesBlock";
 
-import servicesImage from "@/public/servicesImage.png";
-
 import { StationId } from "@/types";
+import MapClient from "./components/client";
 
 const CatalogPage = async ({
 	params,
@@ -24,7 +21,7 @@ const CatalogPage = async ({
 				</p>
 				<ServicesBlock stationId={params.stationId} />
 			</div>
-			<Image src={servicesImage} alt="services-image" />
+			<MapClient stationId={params.stationId} />
 			<div className="px-[100px] pt-[94px] pb-[84px]">
 				<p className="text-[20px] leading-[35px] text-left mb-[86px]">
 					{t("firstP")}
