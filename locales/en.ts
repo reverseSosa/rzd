@@ -3654,4 +3654,105 @@ export default {
 			goBack: "Back",
 		},
 	},
+	"39": {
+		home: {
+			station: "Station",
+			stationName: "Chupriyanovka",
+			description:
+				"We are already traveling through the Tver region, where our train is about to cover over 260 kilometers. This region is home to the longest stretch of railway between two capitals.",
+			aboutStation: "About the station",
+			accessPassport: "Accessibility passport",
+			stationMap: "Station map",
+			serviceCatalog: "Service catalog",
+			onlineBoard: "Online Board",
+			videoHelp: "Video Help",
+		},
+		aboutStation: {
+			railwayStation: "Railway station",
+			stationName: "Chupriyanovka",
+			address: "Kuzminka vokzal. 3, Komsomolskaya Ploshchad, Moscow, 107140",
+			mainP:
+				"We are already traveling through the Tver region, where our train is about to cover over 260 kilometers. This region is home to the longest stretch of railway between two capitals.",
+
+			secondP:
+				"In general, it would probably be more accurate to refer to it not as a region but as the Tver Krai. After all, it is hard to imagine that the area of this region is 6,000 square kilometers larger than the area of a European country like the Czech Republic!",
+
+			thirdP:
+				"By the way, there is a legend about Nicholas I, who, while discussing the railway project, allegedly personally drew a straight line between the two capitals on the map and even apparently threatened the builders with severe punishment if they deviated from it.",
+
+			fourthP:
+				"The emperor, being a very knowledgeable engineer, did not resort to such absurdity. The route of the railway being built naturally aimed to be as straight as possible due to economic considerations.",
+
+			fifthP:
+				"Right at the section between the reservoir and Tver, the road noticeably deviates from the straight line, and if such formalism were followed, Tver could have ended up away from 'Highway No. 1' and might not have become such a major industrial city.",
+
+			sixthP:
+				"The emperor, being a very knowledgeable engineer, did not resort to such absurdity. The route of the railway being built naturally aimed to be as straight as possible due to economic considerations.",
+
+			seventhP:
+				"Right at the section between the reservoir and Tver, the road noticeably deviates from the straight line, and if such formalism were followed, Tver could have ended up away from 'Highway No. 1' and might not have become such a major industrial city.",
+		},
+		accessPassport: {
+			accessPassport: "Accessibility passport",
+			needInfo: "(information needed)",
+			firstP:
+				"Creating safe and comfortable conditions for disabled people is a set of measures that allow people with WHO to independently use the services of Russian Railways. Responsibility for compliance with the regulations of official state documents rests with the owner of the station infrastructure. The creation of a barrier-free environment involves the adaptation of the territory and all premises of the station where passengers are located. Therefore, special equipment and devices are provided:",
+			secondP:
+				"The requirements for the adaptation of railway stations for disabled and low-mobility citizens provide for the installation of emergency call facilities (if necessary) in each zone. A wheelchair can be provided to a passenger with disabilities.",
+			parking: "Parking lots",
+			waitingRooms: "Waiting rooms",
+			stairsAndEl: "Stairs and elevators",
+			restRooms: "Rest rooms",
+			medicalStations: "Medical aid stations",
+			cafeAndBuffets: "Cafes and buffets",
+			toilets: "Toilets",
+			apronsAndPlatforms: "Aprons and platforms",
+		},
+		stationMap: {
+			aprons: "Aprons",
+			ticketsBuy: "Purchase of tickets at the box office windows",
+			stationName: "Chupriyanovka",
+			main: "Home",
+		},
+		serviceCatalog: {
+			services: "Services",
+			firstP:
+				"Creating safe and comfortable conditions for disabled people is a set of measures that allow people with WHO to independently use the services of Russian Railways. Responsibility for compliance with the regulations of official state documents rests with the owner of the station infrastructure. The creation of a barrier-free environment involves the adaptation of the territory and all premises of the station where passengers are located. Therefore, special equipment and devices are provided:",
+			ticketsBuyCash: "Purchase of tickets at the box office windows",
+			ticketsBuyPrint: "Purchase of tickets from ticket printing machines",
+			fastTrack: "Use of fast-track technology",
+			otherServices: "Other services",
+		},
+		onlineTablo: {
+			departure: "Departure",
+			showGone: "Show gone",
+			hideGone: "Hide gone",
+			"trains#one": "{count} train",
+			"trains#few": "{count} trains",
+			"trains#many": "{count} trains",
+			"trains#other": "{count} trains",
+		},
+		videoHelp: {
+			firstP:
+				"Your reliable assistant at the train station. If you have questions, need information or assistance, do not hesitate to use our operator video link. Our professional staff is always ready to answer your inquiries and provide the support you need. We are here to make your journey even more comfortable and carefree.",
+			audioCall: "Audio call to operator",
+			videoCall: "Video call to operator",
+			navHelp: "Help with station navigation",
+			searchApron: "Finding the right apron",
+			anotherOption: "Another option",
+			back: "Back",
+			main: "Home",
+			endCall: "End the call",
+			operator: "Operator",
+		},
+		buyTicketCash: {
+			buyTicketCash: "Purchase of tickets at the box office windows",
+			firstP:
+				"Creating safe and comfortable conditions for disabled people is a set of measures that allow people with WHO to independently use the services of Russian Railways. Responsibility for compliance with the regulations of official state documents rests with the owner of the station infrastructure. The creation of a barrier-free environment involves the adaptation of the territory and all premises of the station where passengers are located. Therefore, special equipment and devices are provided:",
+			secondP:
+				"The requirements for the adaptation of railway stations for disabled and low-mobility citizens provide for the installation of emergency call facilities (if necessary) in each zone. A wheelchair can be provided to a passenger with disabilities.",
+			lookAtMap: "View on map",
+			goBack: "Back",
+		},
+	},
 } as const;
