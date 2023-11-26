@@ -53,10 +53,15 @@ const Screensaver = () => {
 						muted
 						src="/MCD_Ivolga.webm"
 					/>
-					<Image
-						src={fox}
-						alt="fox"
-						className="absolute left-0 bottom-[-110px] scale-[0.8] z-[130]"
+					<video
+						className="absolute bottom-20 left-0 w-full h-auto"
+						id="video_lis"
+						preload="auto"
+						autoPlay
+						loop
+						playsInline
+						muted
+						src="/lis3d.webm"
 					/>
 				</div>
 			)}
